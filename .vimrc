@@ -1,8 +1,8 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-" git clone https://github.com/gmarik/Vundle.vim.git ~     /.vim/bundle/Vundle.vim$
-" Open vim run `:PluginInstall`
+" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" Open vim :PluginInstall
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 "------------------------------
@@ -14,10 +14,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'tpope/vim-pathogen'
-
-" Need `sudo pip install flake8`
 Bundle 'nvie/vim-flake8'
-" Need `npm -g install jshint`
 Bundle 'walm/jshint.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'rizzatti/funcoo.vim'
