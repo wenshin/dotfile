@@ -1,0 +1,14 @@
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+
+[color]
+  ui = true
+[user]
+	name = yuanwen
+	email = wenshin2011@gmail.com
+[core]
+  editor = "vim"
