@@ -4,6 +4,8 @@
   br = branch
   co = checkout
   df = diff
+  log = log --stat
+  server = !git daemon --reuseaddr --verbose --base-path=. --export-all ./.git
 
 [color]
   ui = true

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# my-git-files 显示当前 GIT 仓库指定用户修改过的文件
+# Usage:
+# ./my-git-files 
+# ./my-git-files foo-name
+#
+# Reference:
+# http://stackoverflow.com/questions/6349139/can-i-get-git-to-tell-me-all-the-files-one-user-has-modified?answertab=votes#tab-top
+
+DEFAULT=`git config --get user.name`
+USER=${1:-$DEFAULT}
+
+git log --pretty="%H" --author="$USER" | while read commit_hash; do git show --oneline --name-only $commit_hash | tail -n+2; done | sort | uniq > .mgfcache
+cat .mgfcache
+
+echo '\nFile count'
+wc -l .mgfcache | awk  '{print $1}'
+rm .mgfcache
