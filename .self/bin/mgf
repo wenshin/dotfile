@@ -14,6 +14,14 @@ USER=${1:-$DEFAULT}
 git log --pretty="%H" --author="$USER" | while read commit_hash; do git show --oneline --name-only $commit_hash | tail -n+2; done | sort | uniq > .mgfcache
 cat .mgfcache
 
+# for line in $(cat .mgfcache)
+# do 
+#     # 依赖 madge  遍历 js 依赖关系
+#     # 1 标准输出，2 标准错误输出。标准错误输出可 echo test > /tmp/test 2>&1
+#     # echo $line | egrep -q '.*\.js$' && madge $line 2>/dev/null
+#     echo $line
+# done
+
 echo '\nFile count'
 wc -l .mgfcache | awk  '{print $1}'
 rm .mgfcache
