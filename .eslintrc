@@ -1,7 +1,9 @@
 {
   "extends": "eslint:recommended",
+  "parser": "babel-eslint",
   "plugins": ["react"],
   "ecmaFeatures": {
+    "classes": true,
     "modules": true,
     "jsx": true
   },
